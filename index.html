@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board (8x8)</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function print(data) {
+        let label = document.createTextNode(data);
+        document.body.appendChild(label);
+    }
+
+    function newLine() {
+        let br = document.createElement("br");
+        document.body.appendChild(br);
+    }
+
+    let board_size = 8;
+
+    function createChessboard() {
+        for (let row = 0; row < board_size; row++) {
+            for (let col = 0; col < board_size; col++) {
+                if ((row + col) % 2 === 0) {
+                    print('*');
+                } else {
+                    print('#');
+                }
+            }
+            newLine();
+        }
+    }
+
+    // Call the function to generate the chessboard
+    createChessboard();
+</script>
+
+</body>
+</html>
